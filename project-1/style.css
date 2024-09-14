@@ -1,0 +1,39 @@
+.con{
+    width: 300px;
+    margin: 25% auto;
+    padding: 10%;
+    background-color: yellow;
+}
+#pe{
+    text-align: center;
+    font-size: 35px;
+    color: rgb(142, 142, 131);
+}
+#counter{
+    text-align: center;
+    font-size: 55px;
+    color: rgb(165, 41, 105);
+}
+#plus{
+    text-align: center;
+    font-size: 55px;
+    margin-left: 80px;
+    padding: 10px;
+    color: rgb(165, 41, 105);
+
+}
+#minus{
+    text-align: center;
+    font-size: 55px;
+   margin-left: 25px;
+   padding: 10px;
+   padding-left: 20px;
+   padding-right: 20px;
+    color: rgb(165, 41, 105);
+
+}
+button:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Text Extraction</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@v2.1.4/dist/tesseract.min.js"></script>
+</head>
+<body>
+    <p>
+    Apps for Tonu
+    </p>
+    <h1>Extract Text from Image</h1>
+    <input type="file" id="imgInput" accept="image/*">
+    <button onclick="extractText()">Extract Text</button>
+<br><br><br>
+    <div id="output">Please wait......</div>
+
+    <script>
+        const extractText = () => {
+            const fileInput = document.getElementById('imgInput');
+            const outputDiv = document.getElementById('output');
+
+            const imgFile = fileInput.files[0];
+
+            if (!imgFile) {
+                outputDiv.textContent = "Please select an image file...";
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function () {
+                Tesseract.recognize(
+                    reader.result,  // The file as a data URL
+                    'eng'
+                ).then(({ data }) => {
+                    outputDiv.textContent = data.text;
+                }).catch((error) => {
+                    console.error('Error:', error);
+                    outputDiv.textContent = "Error occurred during text extraction";
+                });
+            };
+
+            reader.readAsDataURL(imgFile);  // Read file as a data URL
+        }
+    </script>
+</body>
+</html>

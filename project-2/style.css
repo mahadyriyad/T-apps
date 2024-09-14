@@ -1,0 +1,26 @@
+body{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgb(208, 203, 188);
+}
+#clrbox{
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    margin: 0 auto;
+}
+#clrcode{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: blue;
+}
+#cpybtn{
+    background-color: rgb(173, 158, 242);
+    color: rgb(5, 40, 49);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+#cpybtn:hover{
+    background-color: blue;
+}
